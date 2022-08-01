@@ -1,0 +1,11 @@
+.bg__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  &__video{
+    object-fit: cover;
+    width: 100%;
+    height: max-content;
+  }
+}

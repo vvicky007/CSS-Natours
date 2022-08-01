@@ -1,0 +1,111 @@
+html{
+  font-size: 100%;
+  @include respondTo(tab-port){
+    font-size: 56.25%;
+  }
+  @include respondTo(desktop){
+    font-size: 90%;
+  }
+ 
+  
+  
+  @include respondTo(bigger){
+    font-size: 100%;
+  }
+  @include respondTo(phone){
+    font-size: 60%;
+  }
+  @include respondTo(tab-land){
+    font-size: 62.5%;
+  }
+}
+
+
+body {
+  font-family: Lato,sans-serif;
+  font-weight: 300;
+  color: $color-grey;
+}
+
+
+.btn-text{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.btn {
+  font-weight: 400;
+}
+
+.heading-about {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.heading-secondary {
+ 
+  font-size: 2rem;
+  font-weight: 700;
+}
+.heading-teritiary{
+  font-size: 1.3rem;
+}
+.paragraph {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 400;
+}
+.features {
+  font-size: 1rem;
+  &__box__icon{
+    font-size: 5rem;
+  }
+  &__box__para{
+    font-weight: 400;
+    text-align: left;
+  }
+}
+.section-stories{
+  &__heading{
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+}
+.story {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.card {
+  &__heading{
+    font-weight: 300;
+    font-size: 1.9rem;
+  }
+  &__details{
+    font-size: 1rem;
+    font-weight: 400;
+    ul{
+     
+      li {
+        text-align: center;
+        font-size: 1rem;
+       
+
+    }
+  }
+  }
+  &__cta{
+    font-size: 1rem;
+    &__price__box{
+      font-size: 1rem;
+     
+    }
+    &__price__para{
+      font-size: 4rem;
+      font-weight: 100;
+    }
+    &__price__value{
+      font-size: 3rem;
+      font-weight: 100;
+    }
+  }
+}

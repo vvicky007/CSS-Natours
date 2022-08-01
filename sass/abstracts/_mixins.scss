@@ -1,0 +1,67 @@
+@mixin clearfix {
+  &::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin calculateWidthGridcell($numofcells, $cellSpan, $margin) {
+  & {
+    @if $numofcells == $cellSpan {
+      width: calc(#{$cellSpan} * ( 100%  / #{$numofcells}));
+    }
+    @else{
+      width: calc(#{$cellSpan} * ( 100% ) / #{$numofcells} - #{$margin});
+    }
+   
+  }
+}
+@mixin centerElement{
+  &{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+
+
+@mixin respondTo($device) {
+    
+    @if $device == tab-port{
+      @media ( min-width:37.5em) and (max-width:56.25em){@content};
+    }
+    @if $device == tab-land{
+      @media ( min-width:56.26em) and (max-width:75em){@content};
+    }
+    @if $device == desktop{
+      @media ( min-width:75.1em) and (max-width:150em){@content};
+    }
+    @if $device == phone{
+      @media (max-width:37.4em){@content};
+    }
+    @if $device == bigger{
+      @media (min-width:112.5625em){@content};
+    }
+   
+}

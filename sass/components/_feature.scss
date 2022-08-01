@@ -1,0 +1,45 @@
+.features {
+  background-image: linear-gradient(to right, rgba($color-primary-green,0.8), rgba($color-dark-green,0.9)) , url("../../img/nat-4.jpg");
+  background-size: cover;
+  padding: 8rem;
+  transform: skewY(-4deg);
+  margin-top: -2.8rem;
+
+  @include respondTo(phone){
+    margin-top: 0;
+    transform: skewY(-2deg);
+  }
+  @include respondTo(tab-port){
+    margin-top: 0;
+    transform: skewY(-2deg);
+  }
+  
+  &__box{
+    background-color: rgba($color-white,0.65);
+    padding: 0.9rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    &__icon {
+      background-image: linear-gradient(to right, rgba($color-dark-green,0.5), rgba($color-dark-green,0.9));
+      color: transparent;
+      -webkit-background-clip: text;
+    }
+    &:hover{
+      box-shadow: 0 0.3rem 0.5rem rgba($color-black,0.8);
+      transform: scale(1.1) translateY(-0.3rem);
+    }
+
+  }
+  &>*{
+    transform: skewY(4deg);
+    @include respondTo(phone){
+    
+      transform: skewY(2deg);
+    }
+    @include respondTo(tab-port){
+    
+      transform: skewY(2deg);
+    }
+  }
+  
+}

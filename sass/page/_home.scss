@@ -1,0 +1,53 @@
+.main{
+  margin-top:-11rem ;
+  padding: 15rem;
+  background-color: $color-light-grey;
+  @include respondTo(phone){
+    margin-top:0 ;
+    padding: 5rem;
+  }
+  @include respondTo(tab-port){
+    margin-top:0 ;
+    padding: 5rem;
+  }
+}
+
+.section-tours {
+  padding: 8rem;
+  background-color:rgba($color-grey,0.1) ;
+  text-align: center;
+  margin-top: -2.7rem;
+  @include respondTo(phone){
+    padding: 2rem;
+  }
+  @include respondTo(tab-port){
+    padding: 3rem;
+  }
+}
+.section-stories{
+  background-color:rgba($color-white,0.8);
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  border-radius: .5rem;
+  
+}
+
+.section-bookings {
+  height: 50rem;
+  padding: 5rem;
+  background-image: 
+  linear-gradient(to right, $color-primary-light, $color-primary-dark),;
+}
+
+.booking__box {
+  height: 30rem;
+  background-image: linear-gradient(105deg , rgba($color-white,0.8) 0%,rgba($color-white,0.9) 50%, transparent 50%),
+                      url("../../img/nat-10.jpg");
+  width: 80%;
+  padding: 5rem 2.5rem;
+}
+
+.booking__form{
+  width: 50%;
+}

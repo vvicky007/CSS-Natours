@@ -1,0 +1,21 @@
+/*
+ contains resets 
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 1.8rem;
+
+  @include respondTo(phone){
+    padding: 0rem;
+  }
+  @include respondTo(tab-port){
+    padding: 0;
+  }
+}
+

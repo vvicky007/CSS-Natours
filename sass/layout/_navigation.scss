@@ -1,0 +1,161 @@
+.navigation {
+  &__input, &__label{
+    background-color: $color-white;
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    text-align: center;
+    z-index: 2000;
+    @include respondTo(phone){
+      top: 1.5rem;
+      right: 3rem;
+    }
+    @include respondTo(tab-port){
+      top: 1.5rem;
+      right: 3rem;
+    }
+  }
+  &__label{
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    z-index: 1000;
+    text-align: center;
+  }
+  &__input {
+    display: none
+  }
+  
+  
+  &-list{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: fixed;
+    top: 20%;
+    text-align: center;
+    z-index: 500;
+    transition: all .5s;
+  }
+  &__items{
+    list-style: none;
+    display: inline-block;
+    
+  }
+  &__item {
+    margin: 1rem;
+
+  }
+  &__background{
+    background-image: radial-gradient($color-primary-light,$color-primary-dark);
+    position: fixed;
+    top: 4rem;
+    right: 4.4rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform .5s;
+    z-index: 400;
+  }
+  &__link{
+    display: inline-block;
+    padding: 0.5rem;
+    &:visited,&:link{
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 400;
+      color: $color-white;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      background-size: 220%;
+      transition: all 0.5s;
+    }
+    &:hover{
+      background-position: 100%;
+      color: $color-primary-green;
+    }
+  }
+  &__input:checked ~ &-list {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &__input:checked ~ &__background {
+    transform: scale(60);
+    
+    opacity: 1;
+    @include respondTo(bigger){
+      transform: scale(220);
+    }
+    @include respondTo(tab-port){
+      transform: scale(120);
+    }
+    @include respondTo(tab-land){
+      transform: scale(120);
+    }
+    @include respondTo(desktop){
+      transform: scale(180);
+    }
+    @include respondTo(phone){
+      transform: scale(100);
+    }
+  }
+
+  //Hamburger icon
+  &__label__icon{
+     
+      &{
+        margin-top: 50%;
+        display: inline-block;
+        width: 2rem;
+        height: 2px;
+        background-color: $color-grey-dark-3;
+        position: relative;
+       
+      }
+      &::after,&::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        position: absolute;
+        background-color: $color-grey-dark-3;
+        transition: all 0.5s;
+      }
+      &::after{
+        top: 0.6rem;
+        left: 0;
+      }
+      &::before{
+        top: -0.6rem;
+        left: 0;
+      }
+  }
+  &__label{
+    &:hover &__icon::after{
+      top: 0.5rem;
+    }
+    &:hover &__icon::before{
+      top: -0.5rem;
+    }
+  }
+  &__input:checked ~ &__label &__label__icon::after{
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform: rotate(45deg);
+  }
+  &__input:checked ~ &__label &__label__icon::before{
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform: rotate(-45deg);
+  }
+  &__input:checked ~ &__label &__label__icon{
+    background-color: transparent;
+  }
+  
+}

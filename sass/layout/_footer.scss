@@ -1,0 +1,51 @@
+.footer {
+    background-color: rgba($color-black,0.8);
+    padding: 5rem;
+    &__logo-box{
+      text-align: center;
+      padding: 3rem;
+    }
+    &__logo{
+      width: 10rem;
+    }
+    &__links{
+      &__group{
+        font-weight: 400;
+        color: rgba($color-white,0.9);
+        border-top:1px solid $color-grey-light-3 ;
+        padding: 1rem;
+      }
+    }
+    &__list{
+      list-style: none;
+      &__item {
+        display: inline-block;
+       
+        &:not(:last-child){
+          margin-right: 1rem;
+        }
+      }
+
+    }
+    &__link{
+      display: inline-block;
+      padding: 0.3rem;
+      &:link,
+      &:visited{
+        text-decoration: none;
+        color: inherit;
+
+      }
+
+      &:hover{
+        box-shadow: 0.4rem 0.4rem 5px rgba($color-black,0.8);
+        transform: rotate(5deg) scale(1.2);
+        perspective: 150rem;
+      }
+    }
+
+    &__copyright{
+      width: 100%;
+      text-align: left;
+    }
+}

@@ -1,0 +1,65 @@
+
+.grid {
+  max-width: $grid-width;
+  margin: 0 auto;
+  text-align: center;
+  
+  .row {
+    max-width: $grid-width;
+    &:not(:last-child){
+      margin-bottom: $gap-between-rows;
+    }
+    
+    @include clearfix;
+    @include respondTo(tab-port){
+      margin: 0 auto;
+      max-width: 30rem;
+    }
+    @include respondTo(phone){
+      
+      width: 100%;
+      // margin: 0 auto;
+    }
+  }
+
+  [class^="col-"]{
+    float: left;
+    text-align: center;
+    &:not(:last-child){
+      margin-right: $gap-between-cols;
+    }
+    @include respondTo(tab-port){ 
+      width: 100% !important;
+      margin-bottom:$gap-between-rows ;
+    }
+    @include respondTo(phone){ 
+      width: 100% !important;
+      margin-bottom:$gap-between-rows ;
+    }
+  }
+  
+
+  .col-1-of-4{
+    
+    @include calculateWidthGridcell(4 , 1 , $gap-between-cols)
+  }
+  .col-2-of-4{
+    @include calculateWidthGridcell(4 , 2 , $gap-between-cols)
+  }
+
+  .col-1-of-3{
+    @include calculateWidthGridcell(3 , 1 , $gap-between-cols)
+  }
+  .col-2-of-3{
+    @include calculateWidthGridcell(3 , 2 , $gap-between-cols)
+  }
+  .col-4-of-4{
+    @include calculateWidthGridcell(4 , 4 , $gap-between-cols)
+  }
+  // .col-1-of-4{
+  //   @include calculateWidthGridcell(4 , 1 , $gap-between-cols)
+  // }
+  .col-1-of-2{
+    @include calculateWidthGridcell(2 , 1 , $gap-between-cols)
+  }
+}
